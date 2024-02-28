@@ -17,16 +17,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HQ8-s7-Dvt">
-                                <rect key="frame" x="70" y="396" width="253" height="60"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="HQ8-s7-Dvt">
+                                <rect key="frame" x="70" y="316" width="253" height="220"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jd5-nQ-DAh">
                                         <rect key="frame" x="0.0" y="0.0" width="253" height="60"/>
+                                        <color key="backgroundColor" systemColor="systemCyanColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="0qX-zK-UJ4"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="google.png" title="Connect with Facebook" imagePadding="20">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="16"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="didTappedFacebookLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e6E-KI-uKd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PoH-3A-4QG">
+                                        <rect key="frame" x="0.0" y="80" width="253" height="60"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="Gm1-JV-Sgl"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="google.png" title="Connect with Google" imagePadding="20">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="16"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="didTappedGoogleLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XPC-77-BSV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6t-j6-c9r" userLabel="Connect with Facebook">
+                                        <rect key="frame" x="0.0" y="160" width="253" height="60"/>
+                                        <color key="backgroundColor" systemColor="systemCyanColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="xnZ-pt-KZr"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="google.png" title="Connect with Apple" imagePadding="20">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="16"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="didTappedAppleLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cff-sF-c3y"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -39,6 +76,11 @@
                             <constraint firstItem="HQ8-s7-Dvt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qzb-8h-3fj"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="appleLoginOutlet" destination="L6t-j6-c9r" id="iT0-8r-YAJ"/>
+                        <outlet property="facebookLoginOutlet" destination="Jd5-nQ-DAh" id="Kwy-gd-JEo"/>
+                        <outlet property="googleLoginOutlet" destination="PoH-3A-4QG" id="KA7-h2-4lq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -46,8 +88,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="google.png" width="18" height="18"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
