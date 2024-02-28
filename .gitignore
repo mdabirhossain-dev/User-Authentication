@@ -70,8 +70,6 @@ DerivedData/
 timeline.xctimeline
 playground.xcworkspace
 
-# Pod files
-Pods
 
 # Swift Package Manager
 # Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
@@ -85,15 +83,21 @@ Pods
 
 .build/
 
+# Pod files
+Pods
+Podfile.lock
+User Authentication.xcworkspace
+# *.xcworkspace
+
 # CocoaPods
 # We recommend against adding the Pods directory to your .gitignore. However
 # you should judge for yourself, the pros and cons are mentioned at:
 # https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
  Pods/
 # Add this line if you want to avoid checking in source code from the Xcode workspace
- *.xcworkspace
 
- Podfile.lock
+
+
 
 # Carthage
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
